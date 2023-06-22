@@ -4,6 +4,7 @@ let logger: Logger;
 
 const environment = process.env.NODE_ENV;
 
+// Use pino-pretty only when in development due to performance issue
 if (environment === 'DEV') {
   const transport = pino.transport({
     target: 'pino-pretty',
